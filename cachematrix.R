@@ -1,11 +1,15 @@
 
 ## This R file is used to store and get a matrix and its inverse
-## matrix into/from cache. To use it, you need to first run the
-## first function makeCacheMatrix(), and assign it to a matrix, say
-## tmp<-makeCacheMatrix(matrix(1:4),2,2).
+## matrix into/from cache. To use it, you need to:
+
+## 1. source it to R environment,
+
+## run the first function makeCacheMatrix(), and assign it to a matrix, say
+## 2. tmp<-makeCacheMatrix(matrix(1:4,2,2))
 
 ## Now you have the tmp matrix, you can get its inverse matrix by
 ## calling the cacheSolve() function.
+## 3. cacheSolve(tmp)
 
 
 ## This first function makeCacheMatrix is a list of four functions
@@ -46,3 +50,4 @@ cacheSolve<-function(x=matrix(),...){
     inv<-solve(data,...)
     x$setInverse(inv)
     inv
+}
